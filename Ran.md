@@ -20,6 +20,11 @@
    
 ![zanzhu](https://github.com/raran2018/zuixin/blob/master/%E8%B5%9E%E5%8A%A9%E5%BD%B1%E9%99%A2.jpg?raw=true)
 
+感谢网友：
+
+     *可  送来的2元
+     *伟  送来的1元
+     *强  送来的18元
 如果可能的话会继续，条件不允许的话注销号码另通知！
    
 
