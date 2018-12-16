@@ -8,4 +8,5 @@ Hello users:
 
 Because there are too many users to report, we will not be able to get the latest address for your service. Please add Xiaoran's personal ID to avoid getting lost! Why are you so serious?
 
+注：由于用户太多，小冉没有办法一一回复，添加后直接看朋友圈即可。
 ![](https://github.com/raran2018/zuixin/blob/master/xiaoran.jpg?raw=true)
