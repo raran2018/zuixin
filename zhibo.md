@@ -1,7 +1,7 @@
 # 【美女直播】
 
 
- [👉 美女直播](http://cc.xianj.vip/app/index/qudao.html?uid=Mjgw)
+ [👉点击进入 美女直播](http://cc.xianj.vip/app/index/qudao.html?uid=Mjgw)
 
 友情提示：
 
