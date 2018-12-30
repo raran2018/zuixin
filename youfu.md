@@ -13,6 +13,8 @@
 
 ### 【高消费区无实力禁止入内】
 
+你可以嫉妒，但是记恨就是你的不对了！
+
 ![](https://github.com/raran2018/zuixin/blob/master/20181218212316.jpg?raw=true)
 
 友情提示：
