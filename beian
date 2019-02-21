@@ -1,0 +1,194 @@
+<!DOCTYPE html><html><head>    
+  <title>{$obj.vod_name}_{$maccms.site_name}</title>
+  <meta name="keywords" content="{$obj.vod_name}在线观看,{$obj.vod_name}高清" />
+  <meta name="description" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}免费在线观看,{$obj.vod_name}剧情介绍" />    
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+   <meta name="renderer" content="webkit|ie-comp|ie-stand">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"><link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="https://wx1.sinaimg.cn/mw690/006b56qZly1fvpdyps4v4j30b40b43yf.jpg">
+   <link rel="stylesheet" href="/static/font/iconfont.css" type="text/css" />
+   <link rel="stylesheet" href="/static/css/m.css" type="text/css" />
+   <script type="text/javascript" src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+   <script type="text/javascript" src="/static/js/jquery.lazyload.js">
+   </script><script type="text/javascript" src="/static/js/home.js"></script>
+   <script src="/static/js/jquery.autocomplete.js"></script>
+  <script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","aid":"{$maccms['aid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+   <script src="/static/js/home.js"> 
+   </script><script src="/static/js/jquery.imageupload.js"></script></head><body>     
+  <div style="width:100%;line-height:3.3rem;background: #ff6880;color: #ffffff;">
+<center>✸※오늘 업데이트：{:mac_data_count(0,'today','vod')}사역 비디오</center>
+</div>
+<link rel="stylesheet" type="text/css" href="/player/css/common.css"/>
+<style type="text/css">
+@media only screen and (min-width : 320px) and (max-width : 768px){ body { width:100%; margin:0 auto;} div.piclist {padding:10px; height: 300px; overflow:hidden; } } 
+@media only screen and (min-width : 992px) and (max-width : 1920px){ body { width:980px; margin:0 auto;} } 
+/*PC端宽高设定*/
+#CuPlayer div.CuPc{ width:100%; height:450px;margin:0 auto; }
+/*移动端宽高设定*/
+#CuPlayer div.CuMob{ width:100%; height:280px;margin:0 auto;position: relative; }
+#CuPlayer div.CuPad{ width:100%; height:280px;margin:0 auto; }
+#CuPlayer .video-js{ width:100%; height:280px;}
+/*移动端设定*/
+video::-webkit-media-controls-enclosure { display: none !important;}
+/*预览结束窗口*/
+div.payInfo { width:100%; height:100%; background:#252625; font-family:"Microsoft YaHei","微软雅黑","Microsoft JhengHei",MingLiu,Verdana, Arial, Helvetica, sans-serif;}
+div.payInfo { -moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;-khtml-user-select:none;user-select:none;}
+div.payInfo p { padding:0; margin:0; }
+div.payInfo p.info{ color: #CCC; font-size: 24px; text-indent: 0.5em; display: block; text-align: center; padding-top:110px;}
+div.CuMob div.payInfo p.info{ color: #CCC; font-size: 24px; text-indent: 0.5em; display: block; text-align: center; padding-top:50px;}
+div.payInfo p.title {display: block;font-size: 16px;padding: 15px 0px 0px;color: #C2C1C1;text-align: center;}
+div.payInfo p.pay {color: #f39800;display: block;font-size: 18px;padding: 5px 0px 0px;text-align: center; }
+div.payInfo p.paybtn { text-align:center; padding-top:20px;}
+div.payInfo p.paybtn a,div.payInfo p.paybtn a:link,div.payInfo p.paybtn a:visited { background-color: #181d2b;border: 1px solid #235c09;border-radius: 5px;color: #FFF;cursor: pointer;display: inline-block;font-size: 18px;height: 48px;line-height: 48px;width: 170px; }
+div.payInfo p.paybtn a.btn1,div.payInfo p.paybtn a.btn1:link,div.payInfo p.paybtn a.btn1:visited { background-color: #327b10;border: 1px solid #235c09;border-radius: 5px;color: #FFF;cursor: pointer;display: inline-block;font-size: 18px;height: 48px;line-height: 48px;width: 170px; }
+div.payInfo p.paybtn a.btn2,div.payInfo p.paybtn a.btn2:link,div.payInfo p.paybtn a.btn2:visited { background-color: transparent;border: 1px solid #666;color: #999;height: 48px;margin-left: 20px;width: 170px; text-decoration:none; }
+</style>
+<!-- 酷播V4.05跨平台代码/开始 -->
+<div class="video" id="CuPlayer">
+<script type="text/javascript">
+<!--
+var vID        = "c1";                   //vID
+<!--
+var vID        = "c1";                   //vID
+var vWidth     = "200";                  //宽度设定，配合CSS实现
+var vHeight    = "240";                  //高度设定，配合CSS实现
+var vFile      = "/player/CuSunV4set.xml";       //配置文件地址:支持五种广告设定
+var vPlayer    = "/player.swf?v=4.0";     //播放器文件地址
+var vPic       = "{$obj.vod_pic}";        //视频缩略图
+var vCssurl    = "/player/css/videos.min.css";   //CSS文件
+var vAutoPlay  = "yes";                  //是否自动播放
+var vEndTime   = 0;                      //预览时间(秒数),默认为0
+var vLogoPath  = "http://bt9797.cn/player/images/logo.png";      //Logo地址
+var vPlayMod   = 0;                      //播放模式优先级,默认=0,html5优先=1,flash优先=2
+var vMp4url    = "{$obj.vod_play_url}";//视频文件地址推荐用mp4文件(h264编码)
+
+//视频结束动作
+function getNext(pars){
+	if( pars == true){
+		location.href="demoX12.html";
+		}else{
+			location.href="demoX12.html";
+		}
+    }
+//移动端视频监听与执行getEnd
+function progressUpdate(){
+	var h5play = "CuPlayer"+vID+"_html5_api";
+    var videox = document.getElementById(h5play);
+	if(vEndTime==0){}else{
+		if((Math.round(videox.currentTime*100)/100)>=vEndTime){
+		getEnd();
+		}
+	}
+}
+//视频预览结束返回界面
+function getEnd(pars){
+	var _html = '';
+	_html += '<div class="payInfo">';
+	_html += '<p class="info">该视频为限制级，请离开微信观看</p>';
+	_html += '<p class="title">完整版视频：《男と女の一部始終。》</p>';
+	_html += '<p class="pay">需支付论坛币：10个</p>';
+	_html += '<p class="paybtn">';
+	_html += '<a class="btn1" href="/2019/1375254565/vip.html" target="_blank">立即观看</a>';
+	_html += '<a class="btn2" href="http://wpa.qq.com/msgrd?v=3&uin=261532593&site=qq&menu=yes" target="_blank"><i class="qqLogo"></i>在线咨询</a></p>';
+	_html += '</div>';
+	document.getElementById(vID).innerHTML = _html;
+}
+//-->
+</script>
+<script class="CuPlayerVideo" data-mce-role="CuPlayerVideo" type="text/javascript" src="/player/js/player.min.js"></script>
+</div>
+<!-- 酷播V4.05跨平台代码/结束 -->
+
+
+</div>
+<div style="width:100%;line-height:2.5rem;background: #ff6880;color: #ffffff;">
+<center>✸请勿给陌生人汇款，此视频仅提供学习之用。</center>
+</div>
+
+  </div>   
+  <div class="bo_tit">    
+    <h4><span>{$obj.vod_remarks} </span>{$obj.vod_name}</h4>       
+</div>        
+<div class="bo_tit">  
+                           <a href="http://cc.xianj.vip/app/index/qudao.html?uid=MTU3"><img src="http://www.nikelike.cn/e/data/eYxcDc2yZnKA2LSk/Njk0YRqIWToBn4a3G4U1BJJ-UjPclTLdxOsboKBVOkh5mgKgvuqTjPkKjtH-aZHGfnEAZzEBeD2sqWifCH2BLg2U2Og3tmoFvixguw9vjP48ESoE9uMa8/id/img5b51af2e29a24.gif" alt="" border="0" style="max-width:100%;overflow:hidden;">
+
+{maccms:foreach name="obj.vod_down_list" id="vo"}
+<div class="ui-box marg" id="downlist_1">
+    <div class="down-title">
+        {maccms:foreach name="vo.urls" id="vo2"}
+  <h4><span>vip下载</span> <a href="{:mac_url_vod_down($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" >【云 盘】</a>
+        {/maccms:foreach}
+                               <a href="http://cc.xianj.vip/app/index/qudao.html?uid=MTU3"><img src="http://www.nikelike.cn/e/data/eYxcDc2yZnKA2LSk/Njk0YRqIWToBn4a3G4U1BJJ-UjPclTLdxOsboKBVOkh5mgKgvuqTjPkKjtH-aZHGfnEAZzEBeD2sqWifCH2BLg2U2Og3tmoFvixguw9vjP48ESoE9uMa8/id/img5b51af2e29a24.gif" alt="" border="0" style="max-width:100%;overflow:hidden;">
+</div>
+{/maccms:foreach}
+</div>   
+  
+  </div> 
+</div>   
+	{maccms:foreach name="obj.vod_play_list" id="vo" key="key"}		
+    <div class="tbox tabs">					
+      <div class="tbox_t">						
+  <h3><i class="iconfont icon-pin"></i> 播放地址</h3>						
+    <div class="tabs_item">																				
+  <span class="list_item active">{$vo.player_info.show}</span>						</div>					</div>										
+  <div class="tabs_block">                                                        
+    <ul class="list_block show">						{maccms:foreach name="vo.urls" id="vo2" key="key2"}							
+      <li> <a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name|mac_substring=7}</a></li>						{/maccms:foreach}                                                    </ul>                    
+  </div>		
+      
+      
+      
+      
+  </div>{/maccms:foreach}		
+   <div class="tbox">
+            <div class="tbox_t">
+                <h3><i class="iconfont icon-heart"></i>관심을 가질 것이다</h3>
+            </div>
+            <ul class="tbox_m">
+			{maccms:vod num="6" type="current" order="desc" by="time"}
+           <li class="vbox">
+    <a class="vbox_t" href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}">
+        <img class="lazy" data-original="{:mac_url_img($vo.vod_pic)}" src="/static/load.gif" alt="{$vo.vod_name}">
+
+             </a>
+    <h4><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+</li>
+            {/maccms:vod}
+        
+                            </ul>
+</div>
+</div>
+                            <div class="myad"><div class="addg">  <a href="http://cc.xianj.vip/app/index/qudao.html?uid=MTU3"><img src="http://www.nikelike.cn/e/data/eYxcDc2yZnKA2LSk/Njk0YRqIWToBn4a3G4U1BJJ-UjPclTLdxOsboKBVOkh5mgKgvuqTjPkKjtH-aZHGfnEAZzEBeD2sqWifCH2BLg2U2Og3tmoFvixguw9vjP48ESoE9uMa8/id/img5b51af2e29a24.gif" alt="" border="0" style="max-width:100%;overflow:hidden;"></a></div>
+</div>
+
+ 
+  <p> <script type="text/javascript">var t;var ua=navigator.userAgent.toLowerCase();if(ua.indexOf('phone')==-1&&ua.indexOf('pad')==-1&&ua.indexOf('android')==-1){t=setTimeout("gomyurl()",1)}function gomyurl(){clearTimeout(t);location.href="/index.html"}</script>
+
+  <script type="text/javascript">$(".MacPlayer").addClass("mplayer").css("padding-bottom","56.25%");</script>     
+  <span style="display:none" class="mac_hits hits" data-mid="1" data-id="90" data-type="hits"></span>   
+        <div class="foot">
+  <div class="foot">
+    <p>丨<a href="/" target="_blank">隐私条款</a>丨 <a href="/" target="_blank">2257</a>丨
+            <a href="/" target="_blank" style="color:#f6a623">我要加盟</a>丨
+            <a href="/">联络我们</a>丨
+            <a href="/" target="_blank">常见问题</a>丨</p>
+<p> <a href="/">返回首页</a><span> </span><a href="/index.php/user/index.htm">返回会员中心</a>
+    
+
+   <div style="position:fixed;background:#0e0e0e;width:100%;left:0;top:0">
+<div style="height:50px">
+  <div class="wrap">
+        <div class="head">
+    <div class="nav">
+<a  href="/index.php/vod/type/id/25.html"><i class="iconfont icon-home"> </i>사이트 홈</a>
+<a  href="/index.php/vod/type/id/223.html">유럽  </a>
+<a  href="/index.php/vod/type/id/222.html">절묘한  </a>
+<a  href="/index.php/vod/type/id/221.html">생기  </a>
+<a  href="/index.php/vod/type/id/220.html">본토  </a>
+<a  href="/index.php/vod/type/id/219.html"> 일본 </a>
+<a  href="/index.php/user/login.html">登录  </a>
+          </div>
+</div>
+    </div>
+    </body>
+</html>
